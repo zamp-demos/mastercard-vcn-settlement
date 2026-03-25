@@ -61,7 +61,7 @@ function AnnouncementBanner({ onDismiss }: { onDismiss: () => void }) {
           In Control for Commercial Payments (ICCP): VCN settlement now live
         </p>
         <p style={{ fontSize: 12.5, color: "#555", lineHeight: 1.55 }}>
-          Single-use VCNs are now available for invoice settlement via the HSBC Navigation primitive. Reconciliation references and D&B fraud pre-clearance are automatically logged per POL-DLA-ES-2026 §4.4.5.
+          Single-use VCNs are now available for invoice settlement via the HSBC Navigation primitive. Reconciliation references and D&B fraud pre-clearance are automatically logged per POL-HSBC-COM-2026 §4.4.5.
           See <span style={{ color: "#eb5c2e", cursor: "pointer", textDecoration: "underline" }}>GLB 12637</span> for details.
         </p>
       </div>
@@ -97,7 +97,7 @@ function InvoiceList({ onSelect, settled }: { onSelect: () => void; settled: boo
         <div style={{ background: "#f8f8f8", border: "1px solid #e8e8e8", borderRadius: 6, padding: "16px 20px" }}>
           <p style={{ fontSize: 12, fontWeight: 700, color: "#555", marginBottom: 14, textTransform: "uppercase", letterSpacing: 0.6 }}>Search Invoices</p>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px 28px" }}>
-            {[["Invoice Number", "INV-INDRA-2026-0298"], ["Purchase Order", "PO-DLA-2026-ES-0441"]].map(([label, val]) => (
+            {[["Invoice Number", "INV-INDRA-2026-0298"], ["Purchase Order", "PO-HSBC-2026-COM-0441"]].map(([label, val]) => (
               <div key={label}>
                 <label style={{ fontSize: 11.5, color: "#666", display: "block", marginBottom: 4 }}>{label}</label>
                 <input defaultValue={val} style={{ width: "100%", border: "1px solid #ddd", borderRadius: 4, padding: "6px 10px", fontSize: 12.5, color: "#333", outline: "none" }} />
@@ -155,7 +155,7 @@ function InvoiceList({ onSelect, settled }: { onSelect: () => void; settled: boo
               </button>
             </td>
             <td style={{ padding: "13px 14px", fontSize: 13, color: "#444" }}>01 Mar 2026</td>
-            <td style={{ padding: "13px 14px", fontSize: 13, color: "#444" }}>PO-DLA-2026-ES-0441</td>
+            <td style={{ padding: "13px 14px", fontSize: 13, color: "#444" }}>PO-HSBC-2026-COM-0441</td>
             <td style={{ padding: "13px 14px", fontSize: 13, color: "#444" }}>22 Mar 2026</td>
             <td style={{ padding: "13px 14px", fontSize: 13, fontWeight: 600, color: "#1a1a1a" }}>€14,000.00</td>
             <td style={{ padding: "13px 14px" }}>
@@ -228,7 +228,7 @@ function InvoiceDetailPanel({ onInitiate, onClose, settled }: { onInitiate: () =
             <InfoRow label="Budget Code" value="ES-IT-2026-Q1" mono />
             <InfoRow label="PO Match" value="✓ Confirmed" green />
             <InfoRow label="Goods Receipt" value="✓ Confirmed" green />
-            <InfoRow label="Approver" value="DLA Finance Madrid" />
+            <InfoRow label="Approver" value="HSBC Finance London" />
           </div>
         </div>
 
@@ -237,7 +237,7 @@ function InvoiceDetailPanel({ onInitiate, onClose, settled }: { onInitiate: () =
           <SectionHead title="ICCP Gateway — Pre-Authorisation" badge={settled ? "SETTLED" : "CONFIRMED"} />
           <div style={{ background: "#f9f9f9", border: "1px solid #ebebeb", borderRadius: 6, padding: "14px 16px", marginBottom: 12 }}>
             <p style={{ fontSize: 11, color: "#777", marginBottom: 8, lineHeight: 1.55 }}>
-              Gateway queried via <strong>HSBC Navigation primitive</strong> · PO ref <code style={{ background: "#efefef", padding: "1px 5px", borderRadius: 3, fontSize: 10.5 }}>PO-2026-0298</code> · VCN identifier <code style={{ background: "#efefef", padding: "1px 5px", borderRadius: 3, fontSize: 10.5 }}>0298-DLA-INDRA</code>
+              Gateway queried via <strong>HSBC Navigation primitive</strong> · PO ref <code style={{ background: "#efefef", padding: "1px 5px", borderRadius: 3, fontSize: 10.5 }}>PO-2026-0298</code> · VCN identifier <code style={{ background: "#efefef", padding: "1px 5px", borderRadius: 3, fontSize: 10.5 }}>0298-HSBC-INDRA</code>
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px 20px" }}>
               <InfoRow label="Authorisation Date" value="2026-03-14" />
@@ -280,7 +280,7 @@ function InvoiceDetailPanel({ onInitiate, onClose, settled }: { onInitiate: () =
             </div>
             <div style={{ background: "#fffbeb", border: "1px solid #f0d060", borderRadius: 5, padding: "9px 12px" }}>
               <p style={{ fontSize: 11.5, color: "#7a5200", lineHeight: 1.55 }}>
-                <strong>Policy:</strong> POL-DLA-ES-2026 §4.4.5 — Mandatory for all VCN settlement confirmations under the DLA Spain programme, regardless of settlement amount. D&B result retained in CRM as mandatory audit evidence.
+                <strong>Policy:</strong> POL-HSBC-COM-2026 §4.4.5 — Mandatory for all VCN settlement confirmations under the HSBC Commercial programme, regardless of settlement amount. D&B result retained in CRM as mandatory audit evidence.
               </p>
             </div>
           </div>
@@ -362,7 +362,7 @@ function PayMethodModal({ selected, setSelected, onContinue, onCancel }: {
             <div>
               <p style={{ fontSize: 10, color: "#999", textTransform: "uppercase", letterSpacing: 0.8, marginBottom: 3 }}>Invoice</p>
               <p style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a" }}>INV-INDRA-2026-0298 · Indra Sistemas S.A.</p>
-              <p style={{ fontSize: 11, color: "#888", marginTop: 2 }}>PO-DLA-2026-ES-0441 · VCN: 0298-DLA-INDRA</p>
+              <p style={{ fontSize: 11, color: "#888", marginTop: 2 }}>PO-HSBC-2026-COM-0441 · VCN: 0298-HSBC-INDRA</p>
             </div>
             <div style={{ textAlign: "right" }}>
               <p style={{ fontSize: 10, color: "#999", textTransform: "uppercase", letterSpacing: 0.8, marginBottom: 3 }}>Authorised Amount</p>
@@ -410,11 +410,11 @@ function VCNCard() {
           <span style={{ fontSize: 10, color: "#aaa", letterSpacing: 0.5 }}>VCN</span>
         </div>
       </div>
-      <p style={{ fontSize: 15.5, letterSpacing: 3, fontWeight: 500, marginBottom: 18, fontFamily: "monospace", color: "#fff" }}>0298 ···· ···· DLA–INDRA</p>
+      <p style={{ fontSize: 15.5, letterSpacing: 3, fontWeight: 500, marginBottom: 18, fontFamily: "monospace", color: "#fff" }}>0298 ···· ···· HSBC–INDRA</p>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
         <div>
           <p style={{ fontSize: 9, opacity: 0.5, textTransform: "uppercase", letterSpacing: 1.2, marginBottom: 3 }}>Card Holder</p>
-          <p style={{ fontSize: 13, fontWeight: 600 }}>DLA PIPER SPAIN</p>
+          <p style={{ fontSize: 13, fontWeight: 600 }}>HSBC COMMERCIAL</p>
         </div>
         <div style={{ textAlign: "center" }}>
           <p style={{ fontSize: 9, opacity: 0.5, textTransform: "uppercase", letterSpacing: 1.2, marginBottom: 3 }}>Expires</p>
@@ -444,28 +444,28 @@ function VCNDetailModal({ onBack, onConfirm }: { onBack: () => void; onConfirm: 
 
           {/* VCN settlement details */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px 22px", marginBottom: 18 }}>
-            <InfoRow label="Card Reference" value="0298-DLA-INDRA" mono />
+            <InfoRow label="Card Reference" value="0298-HSBC-INDRA" mono />
             <InfoRow label="Authorised Amount" value="€14,000.00" green />
             <InfoRow label="Valid Until" value="31 Mar 2026" />
             <InfoRow label="Settlement Ref" value="STL-2026-0318-VC0298" mono />
             <InfoRow label="Payee" value="Indra Sistemas S.A." />
             <InfoRow label="Card Type" value="Single-Use VCN" />
             <InfoRow label="ICCP Gateway" value="HSBC Navigation primitive" />
-            <InfoRow label="D&B Pre-Clearance" value="✓ Passed — POL-DLA-ES-2026 §4.4.5" green />
+            <InfoRow label="D&B Pre-Clearance" value="✓ Passed — POL-HSBC-COM-2026 §4.4.5" green />
           </div>
 
           {/* D&B summary box */}
           <div style={{ background: "#f5faf5", border: "1px solid #c8e6c9", borderRadius: 6, padding: "10px 14px", marginBottom: 14, display: "flex", gap: 8, alignItems: "flex-start" }}>
             <span style={{ color: "#2e7d32", fontSize: 14, flexShrink: 0 }}>✓</span>
             <p style={{ fontSize: 12, color: "#2e5e30", lineHeight: 1.55 }}>
-              <strong>Fraud pre-clearance confirmed.</strong> D&B Global Registry: Indra Sistemas S.A. active, D-U-N-S registered, address Av. de Bruselas 35, Alcobendas, Madrid 28108 — consistent with PO payee record. Supplier identity verified per POL-DLA-ES-2026 §4.4.5.
+              <strong>Fraud pre-clearance confirmed.</strong> D&B Global Registry: Indra Sistemas S.A. active, D-U-N-S registered, address Av. de Bruselas 35, Alcobendas, Madrid 28108 — consistent with PO payee record. Supplier identity verified per POL-HSBC-COM-2026 §4.4.5.
             </p>
           </div>
 
           <div style={{ background: "#fffbeb", border: "1px solid #f0c030", borderRadius: 6, padding: "10px 14px", marginBottom: 22, display: "flex", gap: 8, alignItems: "flex-start" }}>
             <span style={{ color: "#b45309", fontSize: 14, flexShrink: 0 }}>⚠</span>
             <p style={{ fontSize: 12, color: "#92400e", lineHeight: 1.55 }}>
-              This single-use card will be invalidated after the first charge. Reconciliation ref STL-2026-0318-VC0298 will be automatically posted to DLA Madrid ERP. Value date: 2026-03-18.
+              This single-use card will be invalidated after the first charge. Reconciliation ref STL-2026-0318-VC0298 will be automatically posted to HSBC London ERP. Value date: 2026-03-18.
             </p>
           </div>
 
@@ -518,7 +518,7 @@ function SuccessBanner() {
       <div style={{ borderTop: "1px solid #c8e6c9", paddingTop: 10 }}>
         <p style={{ fontSize: 11.5, color: "#444", lineHeight: 1.6 }}>
           ICCP state is definitive — no manual reconciliation required. No escalation to HSBC Payments Operations required.
-          Reconciliation ref logged to DLA Madrid ERP. D&B result retained in CRM per POL-DLA-ES-2026 §4.4.5.
+          Reconciliation ref logged to HSBC London ERP. D&B result retained in CRM per POL-HSBC-COM-2026 §4.4.5.
           PA confirmation language applied: <em>payment confirmed to the named supplier.</em>
         </p>
       </div>
