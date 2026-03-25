@@ -76,7 +76,7 @@ function GreetingCard() {
     <div style={{ background: "#1a1a1a", borderRadius: 8, padding: "22px 28px", marginBottom: 24, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
       <div>
         <p style={{ color: "#888", fontSize: 13, marginBottom: 4 }}>Good morning,</p>
-        <p style={{ color: "#fff", fontSize: 26, fontWeight: 600, letterSpacing: -0.5 }}>DLA Piper Spain</p>
+        <p style={{ color: "#fff", fontSize: 26, fontWeight: 600, letterSpacing: -0.5 }}>HSBC Commercial</p>
       </div>
       <div style={{ textAlign: "right" }}>
         <p style={{ color: "#eb5c2e", fontSize: 12.5, fontWeight: 700, marginBottom: 3 }}>HSBC · ICCP</p>
